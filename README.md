@@ -54,10 +54,12 @@ La estructura de datos de cada país en el CSV es:
 
 **Ejemplo de registros:**
 
+```csv
 Argentina,45376763,2780400,América
 Japón,125800000,377975,Asia
 Brasil,213993437,8515767,América
 Alemania,83149300,357022,Europa
+```
 
 ## 🖥️ Ejemplos de Entradas y Salidas
 
