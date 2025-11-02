@@ -12,6 +12,9 @@ def mostrar_menu():
 #Funcion Mostrar pais, la utiliza para cada vez que sea necesario mostrar un pais con el formato correcto.
 
 def _mostrar_pais(pais):
+    print(f"\nCargando datos...")
+    import time
+    time.sleep(1)
     print(f"\n  ------------------------------")
     print(f"  Nombre:     {pais['nombre']}")
     # f"{pais['poblacion']:,}" agrega comas como separadores de miles
@@ -47,23 +50,24 @@ def cargar_csv (nombre_archivo):
 #Funcion Buscar pais por nombre.
 
 def buscar_pais(lista_paises):
-    print("1 - Buscar país por nombre.")
-    busqueda = input("Ingrese nombre del país que desea buscar: ").strip()
+    print("\n1 - Buscar país por nombre.") 
+    busqueda = input("\nIngrese nombre del país que desea buscar: ").strip() #Le pide al usuario el pais que desea buscar.
     
-    busqueda_lower = busqueda.lower()
+    busqueda_lower = busqueda.lower() #Cambia a minusculas para busarlo en la lista.
 
-    pais_encontrado = None
+    pais_encontrado = None #Define que todavia no encuentra ningun pais que coincida.
 
-    for pais in lista_paises:
-        nombre_pais_lower = pais["nombre"].lower()
+    for pais in lista_paises: #Recorre la lista de paies, elemento por elemento.
+        nombre_pais_lower = pais["nombre"].lower() #Cambia a minusculas el pais de la lista para luego compararlo.
 
-        if nombre_pais_lower == busqueda_lower:
-            pais_encontrado = pais
+        if nombre_pais_lower == busqueda_lower: #Compara el pais con el pais buscado.
+            pais_encontrado = pais #Si lo encuentra le asigna el diccionario de ese pais para mostrar luego los datos.
             break
     
-    if pais_encontrado:
-        print(f"Se ha encontrado 1 resultado para la busqueda de {busqueda}")
-        _mostrar_pais(pais_encontrado)
+    if pais_encontrado: #Si pais_encontrado tiene algun elemento hace lo siguiente.
+        print(f"\nSe ha encontrado 1 resultado para la busqueda de {busqueda}...")
+        
+        _mostrar_pais(pais_encontrado) #Llama a la funcion mostrar pais para mostrar los datos del pais ordenadamente.
 
     else:
-        print(f"No se encontro ningun resultado para {busqueda}")
+        print(f"\nNo se encontro ningun resultado para {busqueda}") #Si no lo encuentra muestra el mensaje.
