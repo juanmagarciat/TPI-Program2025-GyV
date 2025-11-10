@@ -66,6 +66,10 @@ Alemania,83149300,357022,Europa
 
 A continuación, se muestran capturas de pantalla de la ejecución del programa:
 
+<img width="339" height="232" alt="{1B13A655-80BB-4B36-8362-4CD7130CF423}" src="https://github.com/user-attachments/assets/f64f6e1b-c464-4f63-beb9-d0eb4314d6ad" />
+<img width="465" height="285" alt="{99094A8F-7441-4046-B25B-E7D8BFFE95C7}" src="https://github.com/user-attachments/assets/6cc8112d-882f-44f3-8278-5ab4cea8d0a3" />
+
+
 ## 👥 Integrantes del Equipo
 1. Juan Martin Garcia
 
