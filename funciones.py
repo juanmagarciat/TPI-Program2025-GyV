@@ -72,7 +72,7 @@ def buscar_pais(lista_paises):
     print("\n1 - Buscar país por nombre.") 
     busqueda = _solicitar_texto_no_vacio("\nIngrese nombre del país que desea buscar: ") #Le pide al usuario el pais que desea buscar.
     
-    # El 'if not busqueda:' original se elimina porque la función ya lo valida.
+    # El if not busqueda: original se elimina porque la función ya lo valida.
     
     busqueda_lower = busqueda.lower() #Cambia a minusculas para busarlo en la lista.
 
@@ -144,7 +144,13 @@ def filtrar_superficie_poblacion(lista_paises,opcion):
         try:
             # Intenta convertir el valor ingresado a un número entero.
             minimo = int(minimo)
-            break # Si lo logra, sale del bucle.
+            
+            # Verifica si el número es negativo
+            if minimo < 0:
+                print(f"\nError: El valor no puede ser negativo. Intente de nuevo.")
+                continue # Vuelve al inicio del bucle para pedir el dato de nuevo.
+
+            break # Si lo logra (y no es negativo), sale del bucle.
         except ValueError:
             # Si la conversión falla (ej. ingresó "hola"), muestra un error.
             print(f"\nEl numero ingresado no es valido, vuelva a intentarlo...")
@@ -163,7 +169,13 @@ def filtrar_superficie_poblacion(lista_paises,opcion):
         try:
             # Intenta convertir el valor ingresado a un número entero.
             maximo = int(maximo)
-            break # Si lo logra, sale del bucle.
+            
+            # Verifica si el número es negativo
+            if maximo < 0:
+                print(f"\nError: El valor no puede ser negativo. Intente de nuevo.")
+                continue # Vuelve al inicio del bucle para pedir el dato de nuevo.
+            
+            break # Si lo logra (y no es negativo), sale del bucle.
         except ValueError:
             # Si la conversión falla, muestra un error y vuelve a pedir.
             print("\nEl numero ingresado no es valido, vuelva a intentarlo...")
@@ -193,7 +205,7 @@ def filtrar_superficie_poblacion(lista_paises,opcion):
             maximo = "Sin limite"
             
         # Informa al usuario cuántos resultados se encontraron.
-        print(f"\nSe encontraron {len(paises_encontrados)} con {atributo} entre {minimo} y {maximo}")
+        print(f"\nSe encontraron {len(paises_encontrados)} con {atributo} entre {minimo:,} y {maximo:,}")
         # Recorre la lista de encontrados y muestra cada país format
         for pais in paises_encontrados:
             _mostrar_pais(pais)
